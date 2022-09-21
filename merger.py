@@ -3,9 +3,16 @@ import glob
 from pydub import AudioSegment
 from pydub.utils import mediainfo
 
+# User menu:
+
 
 tracks = glob.glob(os.path.expanduser(
-    "~/Music/backingtracks/tracks/*.m4a"))  # get all .m4a files
+        "~/Music/backingtracks/tracks/*.m4a"))  # get all .m4a files
+
+drumless = input("Drumless track? (Y/N) ").lower().strip()
+if drumless == 'y':
+    tracks.remove(os.path.expanduser(
+        "~/Music/backingtracks/tracks/Drums (Live).m4a"))
 
 setup_track = AudioSegment.from_file(os.path.expanduser(
     "~/Music/backingtracks/tracks/Click Track.m4a"), format="m4a")
@@ -15,7 +22,6 @@ base_segment = AudioSegment.silent(
 
 setup_bitrate = mediainfo(os.path.expanduser(
     "~/Music/backingtracks/tracks/Click Track.m4a"))["bit_rate"]  # setup bitrate
-
 
 for track in tracks:
     audio = AudioSegment.from_file(track, format="m4a")  # extract m4a audio
