@@ -15,6 +15,10 @@ def yes_or_no(question):
             print('Please answer with (y/n: ')
 
 
+def progress_bar(progress, total):
+    print(f"Track {progress}/{total} merged...")
+
+
 # user inputs:
 title = input("Song title: ")
 artist = input("Song artist: ")
@@ -25,13 +29,13 @@ tracks = glob.glob(os.path.expanduser(
     "~/Music/backingtracks/tracks/*.m4a"))  # get all .m4a files
 
 
-if drumless: 
+if drumless:
     tracks.remove(os.path.expanduser(
-        "~/Music/backingtracks/tracks/Drums (Live).m4a")) #exclude drums .m4a file
+        "~/Music/backingtracks/tracks/Drums (Live).m4a"))  # exclude drums .m4a file
 
 
 setup_track = AudioSegment.from_file(os.path.expanduser(
-    "~/Music/backingtracks/tracks/Click Track.m4a"), format="m4a") # basis track for setup
+    "~/Music/backingtracks/tracks/Click Track.m4a"), format="m4a")  # basis track for setup
 
 base_segment = AudioSegment.silent(
     duration=len(setup_track))  # set empty track
@@ -39,18 +43,23 @@ base_segment = AudioSegment.silent(
 setup_bitrate = mediainfo(os.path.expanduser(
     "~/Music/backingtracks/tracks/Click Track.m4a"))["bit_rate"]  # setup bitrate
 
-for track in tracks:
+progress_bar(0, len(tracks))  # set progress bar
+for i, track in enumerate(tracks):
     audio = AudioSegment.from_file(track, format="m4a")  # extract m4a audio
     base_segment = base_segment.overlay(audio)  # overlay audio
+    progress_bar(i + 1, len(tracks))
+
+print('Merging... Please wait...')
 
 
-filename = (f"{title} - {artist} - All") # filename for export
+filename = (f"{title} - {artist} - All")  # filename for export
 
 if drumless:
-    filename = (f"{title} - {artist} - Drumless") # filename drumless for export
+    # filename drumless for export
+    filename = (f"{title} - {artist} - Drumless")
 
 
 file_handle = base_segment.export(os.path.expanduser(f"~/Music/backingtracks/combined/{filename}.mp3"),
                                   format="mp3", bitrate=setup_bitrate)  # export combined file
 
-print('Conversion Complete')
+print('Conversion Complete.')
