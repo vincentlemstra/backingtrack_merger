@@ -10,7 +10,7 @@
 * [Acknowledgement](#acknowledgement)
 
 ## General Information
-- This app will merge multiple audio files into 1 merged audio file  
+- This app will merge multiple audio files into 1 merged audio file  .
 
 
 ## Technologies Used
@@ -21,16 +21,17 @@
 - Working with the Pydub package 
 
 ## Screenshots
+![backingtrack_merger](https://user-images.githubusercontent.com/22345585/191718889-1757dfce-11cd-4aaf-a03f-be2b2f5095c9.gif)
 
 
 ## Project Status
-Project is: in progress.
+Project is: In progress.
 
 ## Room for Improvement
 ### To Do
-- Update menu: fix typo, 
-- Update menu: Option to download both files (all tracks + the chosen ...less)
-- Funtion to remove other instruments
+- Update menu: Option for user to edit input.
+- Update menu: Option to download both files (all tracks + the chosen ...less).
+- Funtion to remove other instruments.
 
 ## Acknowledgement
 - Thanks to [Jiaaro](https://github.com/jiaaro) for creating the [Pydub](https://github.com/jiaaro/pydub) package.
