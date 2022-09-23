@@ -10,7 +10,7 @@
 * [Acknowledgement](#acknowledgement)
 
 ## General Information
-- This app will merge multiple audio files into 1 merged audio file  .
+- This app will merge multiple audio files into one merged audio file.
 
 
 ## Technologies Used
@@ -29,13 +29,9 @@ Project is: In progress.
 
 ## Room for Improvement
 ### To Do
-- Update menu: Option for user to edit input.
+- Update menu: Option for the user to edit input.
 - Update menu: Option to download both files (all tracks + the chosen ...less).
-- Funtion to remove other instruments.
+- Function to remove other instruments.
 
 ## Acknowledgement
 - Thanks to [Jiaaro](https://github.com/jiaaro) for creating the [Pydub](https://github.com/jiaaro/pydub) package.
-
-
-
-
