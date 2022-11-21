@@ -9,6 +9,9 @@ Merger:
     drums:
       level: 7
       include: False
+    drums_(live):
+      include: False
+      level: 7
     click_track:
       level: 2
       include: True
