@@ -1,7 +1,10 @@
 import os
 import glob
+import tqdm
 from pydub import AudioSegment
 from pydub.utils import mediainfo
+import yaml
+from yaml import CSafeLoader as SafeLoader
 
 
 def yes_or_no(question):
