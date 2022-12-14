@@ -1,0 +1,27 @@
+Merger:
+  format: m4a
+  # title-prefix: ""
+  title-suffix: "DRUMLESS"
+  output_folder: "combined_files"
+  tracks_suffix_folder: "MultiTracks/"
+  output_format: "mp3"
+  tracks:
+    drums:
+      level: 7
+      include: False
+    drums_(live):
+      include: False
+      level: 7
+    click_track:
+      level: 2
+      include: True
+    guide:
+      level: 2
+      include: True
+    bass:
+      level: 3
+      include: True
+    default:
+      level: 0
+      include: True
+
